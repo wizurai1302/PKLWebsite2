@@ -1,0 +1,105 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set background color and font styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Center the login form vertically and horizontally */
+.form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Style the login form container */
+.form-value {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+}
+
+/* Center the form heading */
+h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* Style the input boxes and labels */
+.inputbox {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.inputbox label {
+    position: absolute;
+    top: 0;
+    left: 10px;
+    color: #999;
+    pointer-events: none;
+    transition: 0.2s;
+}
+
+.inputbox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Highlight invalid input */
+.inputbox input.is-invalid {
+    border-color: #dc3545;
+}
+
+.inputbox input:focus + label,
+.inputbox input:valid + label {
+    top: -15px;
+    left: 5px;
+    font-size: 12px;
+    background-color: #fff;
+    padding: 0 5px;
+    color: #007bff;
+}
+
+/* Style the login button */
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Style the "Belum Punya Akun?" link */
+.register {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.register a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register a:hover {
+    text-decoration: underline;
+}
