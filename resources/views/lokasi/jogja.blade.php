@@ -20,7 +20,7 @@
         </style>
 </head>
 <body>
-@include('layouts.mainNavbar')
+@include('Navbar.mainNavbarJogja')
 </div>
     <div class="container" style="margin-bottom: 20vh">
         {{-- <h3 class="h3 text-center mb-3 mt-5">{{ __('You are logged in!') }}</h3> --}}

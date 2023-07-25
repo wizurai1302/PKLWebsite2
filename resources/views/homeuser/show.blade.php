@@ -26,7 +26,7 @@
     <div class="container mt-5">
         <div class="card mt-5">
             <div class="card-header">
-                <h2 class="card-title" >{{$perusahaan->nama}}</h2>
+                <h2 class="card-title">{{$perusahaan->nama}}</h2>
             </div>
             <div class="card-body">
                 <img src="{{ asset('photos/' . $perusahaan->photo) }}" class="foto rounded mx-auto d-block mt-3" width="40%" height="40%" alt="{{ $perusahaan->name }}">
