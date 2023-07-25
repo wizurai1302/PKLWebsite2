@@ -26,7 +26,7 @@ class PerusahaanController extends Controller
     }
 
     public function showperusahaan(){
-        $perusahaan = perusahaan::all();
+        $perusahaan = perusahaan::with('siswas');
         return view('admin.dataperusahaan',compact('perusahaan'));
     }
 

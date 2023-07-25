@@ -17,6 +17,7 @@ class PerusahaanJSONController extends Controller
         $perusahaan = perusahaan::all();
         return response()->json([
             'status' => 'OKE',
+            'messages' => 'Data Berhasil Di Ambil',
             'data' => $perusahaan,
         ]);
     }

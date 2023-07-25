@@ -12,6 +12,7 @@ class SiswaJSONController extends Controller
     $siswa = Siswa::all();
     return response()->json([
         'status' => 'true',
+        'message' => 'Data Berhasil Di Ambil',
         'data' => $siswa,
     ]);
 }

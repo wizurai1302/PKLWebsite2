@@ -23,7 +23,7 @@ class CreateSiswasTable extends Migration
             $table->String('Kota');
             $table->String('Keahlian');
         });
-    }
+    } 
 
     /**
      * Reverse the migrations.

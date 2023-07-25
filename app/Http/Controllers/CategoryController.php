@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CategoryController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource for Yogyakarta.
      *
      * @return \Illuminate\Http\Response
      */
@@ -18,56 +18,95 @@ class CategoryController extends Controller
         return view('lokasi.jogja', compact('perusahaan'));
     }
 
+    /**
+     * Display a listing of the resource for Jabodetabek.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function jabodetabek()
     {
         $perusahaan = perusahaan::where('lokasi', ['Jabodetabek'])->get();
         return view('lokasi.jabodetabek', compact('perusahaan'));
     }
+
+    /**
+     * Display a listing of the resource for Batam.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function batam()
     {
         $perusahaan = perusahaan::where('lokasi', ['Batam'])->get();
         return view('lokasi.batam', compact('perusahaan'));
     }
+
+    /**
+     * Display a listing of the resource for Pekanbaru.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function pekanbaru()
     {
         $perusahaan = perusahaan::where('lokasi', ['Pekanbaru'])->get();
         return view('lokasi.pekanbaru', compact('perusahaan'));
     }
+
+    /**
+     * Display a listing of the resource for Padang.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function padang()
     {
         $perusahaan = perusahaan::where('lokasi', ['Padang'])->get();
         return view('lokasi.padang', compact('perusahaan'));
     }
 
-    // jurusan
+    // Jurusan methods
 
+    /**
+     * Display a listing of the resource for RPL.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function rpl()
     {
         $perusahaan = Perusahaan::whereIn('jurusan', ['RPL'])->get();
         return view('jurusan.RPL', compact('perusahaan'));
-        
     }
 
+    /**
+     * Display a listing of the resource for MM.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function mm()
     {
         $perusahaan = Perusahaan::whereIn('jurusan', ['MM'])->get();
         return view('jurusan.MM', compact('perusahaan'));
-        
     }
+
+    /**
+     * Display a listing of the resource for TKJ.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function tkj()
     {
         $perusahaan = Perusahaan::whereIn('jurusan', ['TKJ'])->get();
         return view('jurusan.TKJ', compact('perusahaan'));
-        
     }
+
+    /**
+     * Display a listing of the resource for BC.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function bc()
     {
         $perusahaan = Perusahaan::whereIn('jurusan', ['BC'])->get();
         return view('jurusan.MM', compact('perusahaan'));
-        
     }
-
-
 
     /**
      * Show the form for creating a new resource.

@@ -36,7 +36,11 @@ class ChartJSONController extends Controller
     {
         $cityCounts = $this->getCityCounts();
 
-        return response()->json($cityCounts);
+        return response()->json([
+            'status' => 'true',
+            'message' => 'Data Berhasil Di Ambil',
+            'data' => $cityCounts
+        ]);
     }
 
 

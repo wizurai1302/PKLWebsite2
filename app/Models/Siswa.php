@@ -19,7 +19,7 @@ class Siswa extends Model
 
     public function perusahaans()
     {
-        // return $this->hasMany(Perusahaan::class, 'siswa_id');
+        return $this->hasMany(Perusahaan::class, 'siswa_id');
     }
 }
 

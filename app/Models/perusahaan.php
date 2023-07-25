@@ -9,6 +9,7 @@ class perusahaan extends Model
 {
     use HasFactory;
     protected $fillable=[
+        'siswa_id',
         'nama',
         'about',
         'keunggulan' ,
@@ -20,6 +21,6 @@ class perusahaan extends Model
 
     public function siswa()
     {
-        // return $this->belongsTo(Siswa::class, 'siswa_id');
+        return $this->belongsTo(Siswa::class, 'siswa_id');
     }
 }

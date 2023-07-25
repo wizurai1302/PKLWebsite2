@@ -15,7 +15,7 @@ class Perusahaan extends Migration
     {
         Schema::create('perusahaans', function (Blueprint $table) {
             $table->id();
-            // $table->biginteger('siswa_id')->unsigned();
+            $table->biginteger('siswa_id')->unsigned();
             $table->string('nama');
             $table->text('about');
             $table->string('lokasi');
@@ -26,10 +26,10 @@ class Perusahaan extends Migration
             $table->timestamps();
         });
 
-        // Schema::table('perusahaans', function (Blueprint $table) {
+        Schema::table('perusahaans', function (Blueprint $table) {
          
-        // //     $table->foreign('siswa_id')->references('id')->on('siswas')->onupdate('cascade')->ondelete('cascade');
-        // });
+            $table->foreign('siswa_id')->references('id')->on('siswas')->onupdate('cascade')->ondelete('cascade');
+        });
     }
 
     /**
