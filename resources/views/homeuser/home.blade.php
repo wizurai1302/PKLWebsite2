@@ -3,25 +3,18 @@
 
 
 
-{{-- <style>
+<style>
     .description{
         max-height:120px;
         overflow: hidden;
     }
     
-</style> --}}
+</style>
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-10">
             <div class="card">
                 <div class="card-header">{{ __('Informasi Tempat dan Rincian Data') }}</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                        @endif
                     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4">
                         @if($perusahaan->count() > 0)
                             @foreach($perusahaan as $a)

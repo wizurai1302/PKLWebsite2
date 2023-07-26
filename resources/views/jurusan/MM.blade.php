@@ -43,6 +43,7 @@
                                 </div>                       
                                 <a href="{{ route('homeuser.show', $a->id) }}" class="btn btn-primary btn-block mt-3" data-id="{{ $a->id }}">Read More</a>
                             </div>
+                        </div>
                     </div>
                 @endforeach
             </div>

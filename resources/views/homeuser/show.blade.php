@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,11 @@
     h5 {
         margin-top: 5vh;
     }
+
+
+
+
+
 @media only screen and (max-width: 600px) {
   .foto{
     width: 90%;
@@ -29,6 +35,10 @@
                 <h2 class="card-title">{{$perusahaan->nama}}</h2>
             </div>
             <div class="card-body">
+                <a href="/home" class="back-link">
+                    <span class="back-arrow"></span>
+                    <i class="bi bi-arrow-left fs-3 " style="margin-left: 5%;"></i>
+                  </a>
                 <img src="{{ asset('photos/' . $perusahaan->photo) }}" class="foto rounded mx-auto d-block mt-3" width="40%" height="40%" alt="{{ $perusahaan->name }}">
                 <div class="container mt-5 w-75">
                 <h5 class="card-text font-bold " style=" text-align: justify;">Jurusan </h5><p style="text-align: justify">{{ $perusahaan->jurusan }}</p>
