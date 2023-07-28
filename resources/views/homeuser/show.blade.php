@@ -45,8 +45,8 @@
                 <h5 class="card-text"  style="text-align: justify;">Alamat </h5><p style="text-align: justify">{{$perusahaan->alamat}}</p>
                 <h5 class="card-text font-bold " style="margin-bottom:1vh; text-align: justify;">Keunggulan </h5><p style="text-align: justify">{{ $perusahaan->keunggulan }}</p>
                 <h5 class="card-text"  style="margin-bottom: 1vh; text-align: justify;">About </h5><p style="text-align: justify">{{$perusahaan->about}}</p>
-                
                 </div>
+                <a href="{{ route('homeuser.tambahdata', $perusahaan->name) }}" class="btn btn-primary btn-block mt-3" style="margin-left:45%;" data-id="{{ $perusahaan->name }}">Daftar Disini</a>
             </div>
         </div>
     </div>

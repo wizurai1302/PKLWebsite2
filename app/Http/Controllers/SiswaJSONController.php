@@ -7,68 +7,62 @@ use Illuminate\Http\Request;
 
 class SiswaJSONController extends Controller
 {
+    /**
+     * Menampilkan daftar siswa dengan pagination.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function showsiswa()
-{
-    $siswa = Siswa::all();
-    return response()->json([
-        'status' => 'true',
-        'message' => 'Data Berhasil Di Ambil',
-        'data' => $siswa,
-    ]);
-}
-
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
     {
-        //
+        /**
+         * Menentukan jumlah data per halaman untuk pagination.
+         *
+         * @var int $perPage
+         * Jumlah data yang ingin ditampilkan per halaman.
+         */
+        $perPage = 10;
+
+        /**
+         * Mengambil data siswa dari tabel "siswa", memilih kolom-kolom tertentu dan melakukan pagination.
+         *
+         * @var \Illuminate\Pagination\LengthAwarePaginator $siswaPaginated
+         * Paginator yang berisi data siswa yang dipilih.
+         */
+        $siswaPaginated = Siswa::select('Nisn', 'Nama', 'JK', 'Kelas', 'Kota', 'Keahlian')->paginate($perPage);
+
+        /**
+         * Mengembalikan data dalam format JSON dengan status berhasil, pesan sukses, dan data paginasi terpisah.
+         *
+         * @return \Illuminate\Http\JsonResponse
+         * Respon JSON yang berisi kunci-kunci berikut:
+         *   - 'status' (string): Menandakan status keberhasilan sebagai 'true'.
+         *   - 'message' (string): Pesan sukses yang menunjukkan bahwa pengambilan data berhasil.
+         *   - 'data' (array): Data paginasi siswa dari tabel "siswa".
+         *   - 'pagination' (array): Informasi tentang pagination, seperti total data, halaman saat ini, dll.
+         */
+        return response()->json([
+            'status' => 'true',
+            'message' => 'Data Berhasil Di Ambil',
+            'data' => $siswaPaginated->items(),
+            'pagination' => $this->formatPagination($siswaPaginated),
+        ]);
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Format informasi pagination untuk disertakan dalam respons JSON.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @param \Illuminate\Pagination\LengthAwarePaginator $paginator
+     * @return array
      */
-    public function store(Request $request)
+    private function formatPagination(\Illuminate\Pagination\LengthAwarePaginator $paginator)
     {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return [
+            'total' => $paginator->total(),
+            'per_page' => $paginator->perPage(),
+            'current_page' => $paginator->currentPage(),
+            'last_page' => $paginator->lastPage(),
+            'from' => $paginator->firstItem(),
+            'to' => $paginator->lastItem(),
+        ];
     }
 }

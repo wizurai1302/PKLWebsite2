@@ -9,7 +9,7 @@
     </a>
 
     <!-- Sidebar -->
-    <div class="sidebar">
+    {{-- <div class="sidebar">
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
@@ -18,7 +18,7 @@
         <div class="info">
           <a href="#" class="d-block"></a>
         </div>
-      </div>
+      </div> --}}
 
       <!-- SidebarSearch Form -->
 
