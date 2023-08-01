@@ -65,10 +65,16 @@ class LoginJSONController extends Controller
          *   - 'message' (string): Pesan yang menandakan bahwa token telah berhasil diperoleh.
          *   - 'token' (string): Token akses yang dibuat untuk pengguna saat masuk.
          */
-        return response()->json([
+        $response = [
             'status' => true,
             'message' => 'Berhasil mendapatkan token',
             'token' => $user->createToken('user login')->plainTextToken,
-        ]);
+            'data' => $user
+        ];
+
+        $response['data']['token']=$response['token'];
+        unset($response['token']);
+
+        return response()->json($response);
     }
 }

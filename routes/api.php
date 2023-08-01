@@ -29,3 +29,5 @@ Route::get('/admin',[ChartJSONController::class, 'showChart'])->name('admin.show
 Route::get('/datasiswa', [SiswaJSONController::class, 'showsiswa'])->name('admin.datasiswa')->middleware('auth:sanctum');
 
 Route::get('/home', [PerusahaanJSONController::class, 'index'])->name('homeuser.index')->middleware('auth:sanctum');
+
+Route::get('/tambahdata', [App\Http\Controllers\SiswaController::class, 'tambahdata'])->name('homeuser.tambahdata');

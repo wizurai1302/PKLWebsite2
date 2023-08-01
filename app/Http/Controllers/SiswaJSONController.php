@@ -65,4 +65,10 @@ class SiswaJSONController extends Controller
             'to' => $paginator->lastItem(),
         ];
     }
+
+    public function tambahdata()
+    {   
+        $siswa = Siswa::all();
+        return response()->json($siswa);
+    }
 }
